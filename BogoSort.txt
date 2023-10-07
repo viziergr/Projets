@@ -1,4 +1,4 @@
 ------ BogoSort ------
-Taille du tableau : 7
-Nombre total d'itération : 2954
-Temps total : 0.0218808650970459 secondes soit 0.00036468108495076496 minutes
+Taille du tableau : 13
+Nombre total d'itération : 5848032000
+Temps total : 18948.496042490005 secondes soit 315.8082673748334 minutes

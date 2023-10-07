@@ -6,8 +6,6 @@ def bogoSort(Array):
     int=0
     while(testSorted(Array) == False):
         int+=1
-        if(int%1000000 == 0):
-            print(int)
         random.shuffle(Array)
     return Array
 
@@ -18,25 +16,20 @@ def testSorted(Array):
             return False
     return True
 
-tailleArray = 13
+tailleArray = 15
 timeTotal = time.time()
 intTotal = 0
-for taille in range (1,tailleArray+1):
-    print("--------------------")
-    print("Taille du tableau : ", taille)
-    Array = list(range(1,taille+1))
-    random.shuffle(Array)
-    print(Array)
+Array = list(range(1,tailleArray+1))
+random.shuffle(Array)
+print(Array)
 
-    # Driver code to test above
-    time1 = time.time()
-    print(bogoSort(Array))
-    print((time.time()-time1))
-    print(int)
-    intTotal += int
+# Driver code to test above
+time1 = time.time()
+print(bogoSort(Array))
+print((time.time()-time1))
 
 print("Temps total : ", (time.time()-timeTotal), " secondes soit ", (time.time()-timeTotal)/60, " minutes")
-print("Nombre total d'itération : ", intTotal)
+print("Nombre total d'itération : ", int)
 
 ## Création d'un fichier texte
 fichier = open("BogoSort.txt", "w")

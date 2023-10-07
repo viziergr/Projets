@@ -1,8 +1,8 @@
-import math
 import random
 import time
 
-Array = [random.randint(0, 100) for i in range(15)]
+Array = [random.randint(0, 100) for i in range(10)]
+
 def bogoSort(Array):
     global int
     int=0
@@ -24,6 +24,6 @@ def testSorted(Array):
 
 # Driver code to test above
 time1 = time.time()
-print(pogoSort(Array))
+print(bogoSort(Array))
 time2 = time.time()
-print((time2-time1)/60)
+print((time2-time1))

@@ -1,18 +1,12 @@
 import random
 import time
 
-Array = [random.randint(0, 100) for i in range(10)]
-
 def bogoSort(Array):
     global int
     int=0
     while(testSorted(Array) == False):
         int+=1
-        print(int)
-        n = len(Array)
-        for i in range(0, n):
-            j = random.randint(0, n-1)
-            Array[i], Array[j] = Array[j], Array[i]
+        random.shuffle(Array)
     return Array
 
 def testSorted(Array):
@@ -22,8 +16,29 @@ def testSorted(Array):
             return False
     return True
 
-# Driver code to test above
-time1 = time.time()
-print(bogoSort(Array))
-time2 = time.time()
-print((time2-time1))
+tailleArray = 15
+timeTotal = time.time()
+intTotal = 0
+for taille in range (1,tailleArray+1):
+    Array = list(range(1,taille+1))
+    random.shuffle(Array)
+    print(Array)
+
+    # Driver code to test above
+    time1 = time.time()
+    print(bogoSort(Array))
+    print((time.time()-time1))
+    print(int)
+    intTotal += int
+
+print("Temps total : ", (time.time()-timeTotal), " secondes soit ", (time.time()-timeTotal)/60, " minutes")
+print("Nombre total d'itération : ", intTotal)
+
+## Création d'un fichier texte
+fichier = open("BogoSort.txt", "w")
+
+## Ecriture dans le fichier
+fichier.write("------ BogoSort ------\n")
+fichier.write("Taille du tableau : "+str(tailleArray)+"\n")
+fichier.write("Nombre total d'itération : "+str(intTotal)+"\n")
+fichier.write("Temps total : "+str((time.time()-timeTotal))+" secondes soit "+str((time.time()-timeTotal)/60)+" minutes\n")

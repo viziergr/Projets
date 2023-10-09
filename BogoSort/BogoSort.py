@@ -6,6 +6,8 @@ def bogoSort(Array):
     int=0
     while(testSorted(Array) == False):
         int+=1
+        if(int%100000000 == 0):
+            print(int)
         random.shuffle(Array)
     return Array
 
